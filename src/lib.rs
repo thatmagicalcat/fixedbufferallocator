@@ -1,4 +1,6 @@
-pub mod allocator;
+mod allocator;
+
+pub use allocator::FixedBufferAllocator;
 
 #[cfg(test)]
 mod tests {
