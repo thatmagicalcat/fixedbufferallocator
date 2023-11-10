@@ -80,6 +80,7 @@ impl<const SIZE: usize> FixedBufferAllocator<SIZE> {
             .find(|chunk| !chunk.1.free && chunk.1.start == ptr)
             .expect("Invalid pointer");
 
+        self.blocks[idx].free = true;
         self.merge_blocks(idx);
     }
 
